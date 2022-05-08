@@ -94,3 +94,28 @@ function showContactDropdown() {
     document.getElementById("contact-title").style.display = "block"
   }
 }
+
+let text = ["we are", "I am"];
+let counter = 0;
+let elem1 = document.getElementById("changeText1");
+let elem2 = document.getElementById("changeText2");
+setInterval(change, 2500);
+
+function change() {
+  elem1.classList.add('hide');
+  elem2.classList.add('hide');
+  setTimeout(function () {
+    elem1.innerHTML = text[counter];
+    elem2.innerHTML = text[counter];
+    elem1.classList.remove('hide');
+    elem2.classList.remove('hide');
+    counter++;
+    if (counter >= text.length) {
+      counter = 0;
+    }
+  }, 500);
+}
+
+
+
+

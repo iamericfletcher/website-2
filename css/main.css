@@ -99,14 +99,57 @@ textarea {
 }
 
 /*Footer*/
-.footer-section {
-  background-color: #FFADAD;
+
+#changeText1 {
+  padding: 0;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
-#footer-text{
+#changeText2 {
+  padding: 0;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hide {
+  opacity: 0 !important;
+}
+
+.footer-section {
+  height: 13em;
+  background-color: #FFADAD;
+  text-align: center;
+  padding-top: 9%;
+  /*padding-bottom: 16%;*/
+}
+.footer-text{
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.5em;
   text-align: center;
   margin: 0;
 }
+
+
+/*@keyframes fade {*/
+/*  0% {*/
+/*    opacity: 1;*/
+/*  }*/
+/*  50% {*/
+/*    opacity: 0;*/
+/*  }*/
+/*  100% {*/
+/*    opacity: 1;*/
+/*  }*/
+/*}*/
+
+/*#footer-text-animated-1 {*/
+/*  animation: fade 3s infinite 0s;*/
+/*}*/
+/*#footer-text-animated-2 {*/
+/*  animation: fade 3s infinite 1.5s;*/
+/*}*/
 
 /*About Me*/
 
