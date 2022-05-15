@@ -86,6 +86,26 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+/*Wrapper*/
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.wrapper > * {
+  flex: 1 100%;
+}
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. about
+ * 3. experience
+ * 4. projects
+ * 5. social
+ * 6. contact
+ * 7. footer
+ */
 
 /*Header*/
 
