@@ -1,64 +1,165 @@
+// Get viewport size
+const mediaQuery = window.matchMedia("(min-width: 35em)");
 let aboutMeOnOff = 1;
-// function to remove clip-path then display the content
-function showAboutMeDropdown() {
-  if (aboutMeOnOff === 1) {
-    document.getElementById("about-me-section").style.clipPath = "none"
-    document.getElementById("about-me-section").style.animationName = "fadeInAboutMe"
-    aboutMeOnOff = 0;
-    document.getElementById("about-me-dropdown").style.display = "block"
-    document.getElementById("about-me-section").style.height = "100%"
-    document.getElementById("about-me-title").style.display = "none"
-  } else {
-    document.getElementById("about-me-section").style.clipPath = "polygon(0 0%, 100% 0, 100% 100%, 0 0%)"
-    document.getElementById("about-me-section").style.animationName = "fadeOutAboutMe"
-    aboutMeOnOff = 1;
-    document.getElementById("about-me-dropdown").style.display = "none"
-    document.getElementById("about-me-title").style.display = "block"
-  }
-}
-
 let experienceOnOff = 1;
-// function to remove clip-path then display the content
-function showExperienceDropdown() {
-  if (experienceOnOff === 1) {
-    document.getElementById("experience-section").style.clipPath = "none"
-    document.getElementById("experience-section").style.animationName = "fadeInExperience"
-    experienceOnOff = 0;
-    document.getElementById("experience-dropdown").style.display = "block"
-    document.getElementById("experience-section").style.height = "100%"
-    document.getElementById("experience-title").style.display = "none"
-  } else {
-    document.getElementById("experience-section").style.clipPath = "polygon(100% 0, 0 0, 0 100%, 100% 0)"
-    document.getElementById("experience-section").style.animationName = "fadeOutExperience"
-    experienceOnOff = 1;
-    document.getElementById("experience-dropdown").style.display = "none"
-    document.getElementById("experience-title").style.display = "block"
-  }
-}
-
-
 let projectOnOff = 1;
-// function to remove clip-path then display the content
-function showProjectDropdown() {
-  if (projectOnOff === 1) {
-    document.getElementById("project-section").style.clipPath = "none"
-    document.getElementById("project-section").style.animationName = "fadeInProject"
-    projectOnOff = 0;
-    document.getElementById("project-dropdown").style.display = "block"
-    document.getElementById("project-section").style.height = "100%"
-    document.getElementById("project-title").style.display = "none"
-  } else {
-    document.getElementById("project-section").style.clipPath = "polygon(0 0%, 100% 0, 100% 100%, 0 0%)"
-    document.getElementById("project-section").style.animationName = "fadeOutProject"
-    projectOnOff = 1;
-    document.getElementById("project-dropdown").style.display = "none"
-    document.getElementById("project-title").style.display = "block"
-  }
-}
-
 let socialOnOff = 1;
+let contactOnOff = 1;
 
-function showSocialDropdown() {
+if (mediaQuery.matches) {
+  // If media query matches
+  // This is the code that runs if the viewport is at least 35em wide
+  // Do stuff here
+  console.log("35em");
+  document.getElementById("about-me-section").addEventListener("click", function() {
+    console.log("clicked");
+    if(aboutMeOnOff === 1) {
+      document.getElementById("experience-container").style.display = "none";
+      document.getElementById("project-container").style.display = "none";
+      document.getElementById("social-container").style.display = "none";
+      document.getElementById("contact-container").style.display = "none";
+      aboutMeOnOff = 0;
+    } else {
+     document.getElementById("experience-container").style.display = "block";
+     document.getElementById("project-container").style.display = "block";
+     document.getElementById("social-container").style.display = "block";
+     document.getElementById("contact-container").style.display = "block";
+      aboutMeOnOff = 1;
+    }
+  });
+
+  document.getElementById("experience-container").addEventListener("click", function() {
+    console.log("clicked");
+    if(aboutMeOnOff === 1) {
+      document.getElementById("about-container").style.display = "none";
+      document.getElementById("project-container").style.display = "none";
+      document.getElementById("social-container").style.display = "none";
+      document.getElementById("contact-container").style.display = "none";
+      aboutMeOnOff = 0;
+    } else {
+     document.getElementById("about-container").style.display = "block";
+     document.getElementById("project-container").style.display = "block";
+     document.getElementById("social-container").style.display = "block";
+     document.getElementById("contact-container").style.display = "block";
+      aboutMeOnOff = 1;
+    }
+
+  })
+
+  document.getElementById("contact-container").addEventListener("click", function() {
+    console.log("clicked");
+    if(aboutMeOnOff === 1) {
+      document.getElementById("about-container").style.display = "none";
+      document.getElementById("experience-container").style.display = "none";
+      document.getElementById("project-container").style.display = "none";
+      document.getElementById("social-container").style.display = "none";
+      aboutMeOnOff = 0;
+    } else {
+     document.getElementById("about-container").style.display = "block";
+     document.getElementById("experience-container").style.display = "block";
+     document.getElementById("project-container").style.display = "block";
+     document.getElementById("social-container").style.display = "block";
+      aboutMeOnOff = 1;
+    }
+
+  })
+
+  document.getElementById("project-container").addEventListener("click", function() {
+    console.log("clicked");
+    if(aboutMeOnOff === 1) {
+      document.getElementById("about-container").style.display = "none";
+      document.getElementById("experience-container").style.display = "none";
+      document.getElementById("contact-container").style.display = "none";
+      document.getElementById("social-container").style.display = "none";
+      aboutMeOnOff = 0;
+    } else {
+     document.getElementById("about-container").style.display = "block";
+     document.getElementById("experience-container").style.display = "block";
+     document.getElementById("contact-container").style.display = "block";
+     document.getElementById("social-container").style.display = "block";
+      aboutMeOnOff = 1;
+    }
+
+  })
+
+  document.getElementById("social-container").addEventListener("click", function() {
+    console.log("clicked");
+    if(aboutMeOnOff === 1) {
+      document.getElementById("about-container").style.display = "none";
+      document.getElementById("experience-container").style.display = "none";
+      document.getElementById("project-container").style.display = "none";
+      document.getElementById("contact-container").style.display = "none";
+      aboutMeOnOff = 0;
+    } else {
+     document.getElementById("about-container").style.display = "block";
+     document.getElementById("experience-container").style.display = "block";
+     document.getElementById("project-container").style.display = "block";
+     document.getElementById("contact-container").style.display = "block";
+      aboutMeOnOff = 1;
+    }
+
+  })
+
+  ;
+
+} else {
+  // If media query does not match
+  // This is the code that runs if the viewport is less than 35em wide
+  // Do stuff here
+  console.log("less than 35em");
+// function to remove clip-path then display the content
+  document.getElementById("about-me-section").addEventListener("click", function() {
+    if (aboutMeOnOff === 1) {
+      document.getElementById("about-me-section").style.clipPath = "none"
+      document.getElementById("about-me-section").style.animationName = "fadeInAboutMe"
+      aboutMeOnOff = 0;
+      document.getElementById("about-me-dropdown").style.display = "block"
+      document.getElementById("about-me-section").style.height = "100%"
+      document.getElementById("about-me-title").style.display = "none"
+    } else {
+      document.getElementById("about-me-section").style.clipPath = "polygon(0 0%, 100% 0, 100% 100%, 0 0%)"
+      document.getElementById("about-me-section").style.animationName = "fadeOutAboutMe"
+      aboutMeOnOff = 1;
+      document.getElementById("about-me-dropdown").style.display = "none"
+      document.getElementById("about-me-title").style.display = "block"
+    }
+  });
+
+  document.getElementById("experience-section").addEventListener("click", function() {
+    if (experienceOnOff === 1) {
+      document.getElementById("experience-section").style.clipPath = "none"
+      document.getElementById("experience-section").style.animationName = "fadeInExperience"
+      experienceOnOff = 0;
+      document.getElementById("experience-dropdown").style.display = "block"
+      document.getElementById("experience-section").style.height = "100%"
+      document.getElementById("experience-title").style.display = "none"
+    } else {
+      document.getElementById("experience-section").style.clipPath = "polygon(100% 0, 0 0, 0 100%, 100% 0)"
+      document.getElementById("experience-section").style.animationName = "fadeOutExperience"
+      experienceOnOff = 1;
+      document.getElementById("experience-dropdown").style.display = "none"
+      document.getElementById("experience-title").style.display = "block"
+    }
+  });
+
+  document.getElementById("project-section").addEventListener("click", function() {
+    if (projectOnOff === 1) {
+      document.getElementById("project-section").style.clipPath = "none"
+      document.getElementById("project-section").style.animationName = "fadeInProject"
+      projectOnOff = 0;
+      document.getElementById("project-dropdown").style.display = "block"
+      document.getElementById("project-section").style.height = "100%"
+      document.getElementById("project-title").style.display = "none"
+    } else {
+      document.getElementById("project-section").style.clipPath = "polygon(0 0%, 100% 0, 100% 100%, 0 0%)"
+      document.getElementById("project-section").style.animationName = "fadeOutProject"
+      projectOnOff = 1;
+      document.getElementById("project-dropdown").style.display = "none"
+      document.getElementById("project-title").style.display = "block"
+    }
+  });
+
+document.getElementById("social-section").addEventListener("click", function() {
   if (socialOnOff === 1) {
     document.getElementById("social-section").style.clipPath = "none"
     document.getElementById("social-section").style.animationName = "fadeInSocial"
@@ -73,12 +174,9 @@ function showSocialDropdown() {
     document.getElementById("social-dropdown").style.display = "none"
     document.getElementById("social-title").style.display = "block"
   }
-}
+});
 
-
-let contactOnOff = 1;
-
-function showContactDropdown() {
+document.getElementById("contact-section").addEventListener("click", function() {
   if (contactOnOff === 1) {
     document.getElementById("contact-section").style.clipPath = "none"
     document.getElementById("contact-section").style.animationName = "fadeInContact"
@@ -93,7 +191,8 @@ function showContactDropdown() {
     document.getElementById("contact-dropdown").style.display = "none"
     document.getElementById("contact-title").style.display = "block"
   }
-}
+});
+
 
 let text = ["we are", "I am"];
 let counter = 0;
@@ -114,7 +213,7 @@ function change() {
       counter = 0;
     }
   }, 500);
-}
+}}
 
 
 

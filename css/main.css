@@ -86,6 +86,10 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html, body {
+  height: 100%;
+}
+
 /*Wrapper*/
 .wrapper {
   display: flex;
@@ -137,7 +141,7 @@ textarea {
 }
 
 .footer-section {
-  height: 13em;
+  /*height: 100%;*/
   background-color: #FFADAD;
   text-align: center;
   padding-top: 9%;
@@ -152,25 +156,6 @@ textarea {
   letter-spacing: 3px;
 }
 
-
-/*@keyframes fade {*/
-/*  0% {*/
-/*    opacity: 1;*/
-/*  }*/
-/*  50% {*/
-/*    opacity: 0;*/
-/*  }*/
-/*  100% {*/
-/*    opacity: 1;*/
-/*  }*/
-/*}*/
-
-/*#footer-text-animated-1 {*/
-/*  animation: fade 3s infinite 0s;*/
-/*}*/
-/*#footer-text-animated-2 {*/
-/*  animation: fade 3s infinite 1.5s;*/
-/*}*/
 
 /*About Me*/
 
@@ -235,6 +220,11 @@ textarea {
 }
 
 /*Experience*/
+
+#experience-dropdown {
+  display: none;
+}
+
 #experience-section {
   background-color: #CAFFBF;
   height: 10em;
@@ -264,6 +254,7 @@ textarea {
   }
 }
 
+
 #experience-title {
   text-align: center;
   padding-bottom: 4em;
@@ -282,6 +273,10 @@ textarea {
 }
 
 /*Projects*/
+
+#project-dropdown {
+  display: none;
+}
 
 #project-section {
   background-color: #A0C4FF;
@@ -329,6 +324,10 @@ textarea {
 
 
 /*Social*/
+
+#social-dropdown {
+  display: none
+}
 
 #social-section {
   background-color: #FDFFB6;
@@ -421,6 +420,10 @@ textarea {
   margin: 0;
 }
 
+#contact-dropdown {
+  display: none;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -511,6 +514,44 @@ textarea {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
+  body {
+    overflow: hidden;
+  }
+
+  /*Wrapper*/
+  .wrapper {
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+  }
+
+  .wrapper > * {
+    flex: 1 100%;
+  }
+
+  #about-me-section, #experience-section,
+  #projects-section, #contact-section,
+  #project-section, #social-section {
+    clip-path: none;
+    height: 40.5em;
+  }
+
+#about-container {order: 1}
+#experience-container {order: 2}
+#projects-container {order: 3}
+#contact-container {order: 4}
+#project-container {order: 5}
+#social-container {order: 6}
+
+.footer-section {
+  margin: auto;
+  height: 23em;
+  padding-top: 5em;
+}
+
+
+
+
 
 }
 
